@@ -1,0 +1,10 @@
+node_modules/
+.claude
+*.log
+CLAUDE.md
+.env
+database.sqlite
+.DS_Store
+npm-debug.log*
+dist/
+build/
