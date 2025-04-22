@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.send('WebWatcher - Website Monitoring Tool');
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.get('/api/status', (req, res) => {

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebWatcher - Website Monitor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>WebWatcher</h1>
+            <p>Monitor your websites and track their uptime</p>
+        </header>
+
+        <div class="add-website">
+            <h2>Add Website</h2>
+            <form id="websiteForm">
+                <input type="text" id="websiteName" placeholder="Website name" required>
+                <input type="url" id="websiteUrl" placeholder="https://example.com" required>
+                <button type="submit">Add Website</button>
+            </form>
+        </div>
+
+        <div class="websites-section">
+            <h2>Monitored Websites</h2>
+            <div id="websitesList" class="websites-list">
+                <p>Loading...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
