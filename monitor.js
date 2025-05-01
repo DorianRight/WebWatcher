@@ -89,7 +89,11 @@ class WebsiteMonitor {
 
     startScheduler() {
         cron.schedule('*/5 * * * *', async () => {
-            await this.runChecks();
+            try {
+                await this.runChecks();
+            } catch (error) {
+                console.error('Scheduled check failed:', error);
+            }
         });
         console.log('Website monitoring scheduler started (every 5 minutes)');
     }

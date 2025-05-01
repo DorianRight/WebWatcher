@@ -65,6 +65,23 @@ app.post('/api/check/:id', async (req, res) => {
     });
 });
 
+app.get('/api/websites/:id/history', (req, res) => {
+    const websiteId = req.params.id;
+    const limit = req.query.limit || 50;
+
+    db.all(
+        "SELECT * FROM checks WHERE website_id = ? ORDER BY checked_at DESC LIMIT ?",
+        [websiteId, limit],
+        (err, rows) => {
+            if (err) {
+                res.status(500).json({ error: err.message });
+            } else {
+                res.json(rows);
+            }
+        }
+    );
+});
+
 monitor.startScheduler();
 
 app.listen(PORT, () => {
