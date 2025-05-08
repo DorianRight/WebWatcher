@@ -1,0 +1,14 @@
+{
+  "server": {
+    "port": 3000
+  },
+  "monitoring": {
+    "checkInterval": "*/5 * * * *",
+    "timeout": 10000,
+    "retries": 1
+  },
+  "database": {
+    "filename": "database.sqlite",
+    "maxHistory": 1000
+  }
+}
